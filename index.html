@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aqua Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#home" class="brand">Aqua</a>
+      <nav class="site-nav" id="siteNav" aria-label="Primary">
+        <a href="#product">Product</a>
+        <a href="#mission">Mission</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="header-carousel" id="headerCarousel">
+      <div class="carousel-slides" id="carouselSlides">
+        <!-- Slide template: set `data-bg` to your image path (e.g. data-bg="images/slide1.jpg") -->
+        <article class="slide active" data-bg="IMG/oil-refinery-libya.jpg">
+          <div class="slide-inner">
+            <div class="slide-card">
+              <h1>Accelerate delivery with centralized workflow.</h1>
+              <p class="hero-text">Our platform brings product strategy, operations, and storytelling into one cohesive experience.</p>
+              <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">Get in touch</a>
+                <a href="#product" class="btn btn-secondary">See product</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" data-bg="IMG/170501340.webp">
+          <div class="slide-inner">
+            <div class="slide-card">
+              <h1>Reveal opportunities through meaningful data.</h1>
+              <p class="hero-text">Visual dashboards and targeted metrics keep every decision aligned with your mission.</p>
+              <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">Get in touch</a>
+                <a href="#product" class="btn btn-secondary">See product</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" data-bg="IMG/about_background.jpg">
+          <div class="slide-inner">
+            <div class="slide-card">
+              <h1>Connect teams, stakeholders, and customers.</h1>
+              <p class="hero-text">Modern collaboration tools designed for clarity, speed, and executive oversight.</p>
+              <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">Get in touch</a>
+                <a href="#product" class="btn btn-secondary">See product</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="carousel-controls" id="carouselControls">
+        <button data-slide="0" class="control active" aria-label="Slide 1"></button>
+        <button data-slide="1" class="control" aria-label="Slide 2"></button>
+        <button data-slide="2" class="control" aria-label="Slide 3"></button>
+      </div>
+
+      <svg class="chev-deco" viewBox="0 0 100 100" aria-hidden="true">
+        <polygon points="0,0 100,0 100,22 22,100 0,100" fill="rgba(46,196,204,0.06)" />
+      </svg>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--packed" id="product">
+      <div class="section-header">
+        <p class="eyebrow">Product</p>
+        <h2>Present your product idea with clarity and confidence.</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">01</div>
+          <h3>Modern interface</h3>
+          <p>Design with a polished experience that anchors brand credibility and ensures ease of adoption.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">02</div>
+          <h3>Strategic storytelling</h3>
+          <p>Communicate your value, roadmap, and product fit with sections that speak to executives and customers alike.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">03</div>
+          <h3>Responsive design</h3>
+          <p>Every layout is optimized for mobile, tablet, and desktop so your message is seamless anywhere.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--split" id="mission">
+      <div class="mission-copy">
+        <p class="eyebrow">Mission</p>
+        <h2>Empower teams to launch products that matter.</h2>
+        <p>We believe in purposeful innovation, grounded in transparency and human-centered impact. Our platform is built to make every product decision more visible, better informed, and faster to execute.</p>
+        <ul class="mission-list">
+          <li>Reduce complexity with elegant workflows.</li>
+          <li>Keep customers at the center of every launch.</li>
+          <li>Support ambitious teams with dependable tooling.</li>
+        </ul>
+      </div>
+      <div class="mission-panel">
+        <div class="panel-stat">
+          <span>90%</span>
+          <p>of teams report faster alignment after adopting the system.</p>
+        </div>
+        <div class="panel-stat">
+          <span>60%</span>
+          <p>improvement in stakeholder communication across product launches.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--wide" id="team">
+      <div class="section-header">
+        <p class="eyebrow">Team</p>
+        <h2>Built by experienced operators, designers, and technologists.</h2>
+      </div>
+      <div class="team-grid">
+        <article class="team-card">
+          <h3>Jordan Wells</h3>
+          <p>Founder &amp; CEO</p>
+        </article>
+        <article class="team-card">
+          <h3>Amira Chen</h3>
+          <p>Design Lead</p>
+        </article>
+        <article class="team-card">
+          <h3>Diego Rivera</h3>
+          <p>Product Strategy</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contact">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Ready to bring your idea to market?</h2>
+          <p>Send us a message and we’ll help shape a landing experience that matches your ambition.</p>
+        </div>
+        <form class="contact-form" action="#" method="post">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Aqua. Crafted for high-impact digital launches.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
