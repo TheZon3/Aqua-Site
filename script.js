@@ -69,3 +69,59 @@ siteNav.querySelectorAll('a').forEach(a => {
 applySlideBackgrounds();
 showSlide(0);
 startCarousel();
+
+// --- Mobile touch / swipe handlers for header carousel ---
+const headerCarousel = document.getElementById('headerCarousel');
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+const SWIPE_THRESHOLD = 50; // px - minimum horizontal movement to count as a swipe
+
+function onTouchStart(e) {
+  if (!e.touches || e.touches.length !== 1) return;
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+  touchEndX = touchStartX;
+  touchEndY = touchStartY;
+  // pause carousel while user interacts
+  clearInterval(carouselInterval);
+}
+
+function onTouchMove(e) {
+  if (!e.touches || e.touches.length !== 1) return;
+  touchEndX = e.touches[0].clientX;
+  touchEndY = e.touches[0].clientY;
+  const dx = Math.abs(touchEndX - touchStartX);
+  const dy = Math.abs(touchEndY - touchStartY);
+  // If the user is primarily swiping horizontally, prevent vertical scroll from hijacking
+  if (dx > dy && dx > 10) {
+    e.preventDefault();
+  }
+}
+
+function onTouchEnd() {
+  const dx = touchEndX - touchStartX;
+  const dy = touchEndY - touchStartY;
+  // Only treat as swipe if horizontal movement is dominant and exceeds threshold
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_THRESHOLD) {
+    if (dx < 0) {
+      // swipe left -> next
+      const nextIndex = (currentIndex + 1) % slides.length;
+      showSlide(nextIndex);
+    } else {
+      // swipe right -> previous
+      const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(prevIndex);
+    }
+  }
+  // resume carousel after interaction
+  startCarousel();
+}
+
+if (headerCarousel) {
+  headerCarousel.addEventListener('touchstart', onTouchStart, { passive: true });
+  headerCarousel.addEventListener('touchmove', onTouchMove, { passive: false });
+  headerCarousel.addEventListener('touchend', onTouchEnd);
+  headerCarousel.addEventListener('touchcancel', onTouchEnd);
+}
